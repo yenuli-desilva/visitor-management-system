@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMS Enterprise | Smart & Secure Visitor Management System</title>
+  <meta name="description" content="Streamline guest check-ins, departures, host routing, security compliance, and organizational audit reporting with VMS Enterprise.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="landing-page" id="home">
+
+  <!-- Top Navigation Bar -->
+  <header class="landing-navbar">
+    <div class="landing-container">
+      <div class="landing-nav-inner">
+        <!-- Brand Logo -->
+        <a href="index.html" class="landing-brand">
+          <div class="landing-brand-logo">
+            <svg width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.3" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="landing-brand-name">VMS</span>
+            <span class="landing-brand-badge">Enterprise</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Home, About, How it Works, Help) -->
+        <ul class="landing-nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#help">Help</a></li>
+        </ul>
+
+        <!-- Top Action Buttons (Always Login & Register) -->
+        <div class="landing-nav-actions">
+          <a href="login.html" class="btn-login" id="nav-btn-login">Sign In</a>
+          <a href="register.html" class="btn-register" id="nav-btn-register">
+            <span>Register</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          <button type="button" class="landing-menu-toggle" id="landing-menu-toggle" aria-label="Toggle Navigation">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="landing-mobile-menu" id="landing-mobile-menu">
+      <a href="#home" onclick="toggleMobileMenu()">Home</a>
+      <a href="#about" onclick="toggleMobileMenu()">About</a>
+      <a href="#how-it-works" onclick="toggleMobileMenu()">How It Works</a>
+      <a href="#help" onclick="toggleMobileMenu()">Help & Guidelines</a>
+      <div class="mobile-actions">
+        <a href="login.html" class="btn btn-secondary btn-block" style="text-align: center;">Sign In to Portal</a>
+        <a href="register.html" class="btn btn-primary btn-block" style="text-align: center;">Register User Account</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Light & Crisp Aesthetic) -->
+  <section class="landing-hero">
+    <div class="landing-container">
+      <div class="landing-hero-grid">
+        <!-- Hero Text Content -->
+        <div>
+          <div class="landing-hero-tag">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Next-Generation Reception Security</span>
+          </div>
+
+          <h1 class="landing-hero-title">
+            Smart, Unified & Secure <span>Visitor Management</span>
+          </h1>
+
+          <p class="landing-hero-desc">
+            Modernize your organization's reception desk. Register visiting guests in seconds, log check-in timestamps, monitor real-time premises traffic, and maintain digital compliance audit trails.
+          </p>
+
+          <div class="landing-hero-cta">
+            <a href="login.html" class="btn-hero-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+              </svg>
+              <span>Sign In to Portal</span>
+            </a>
+
+            <a href="register.html" class="btn-hero-secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+              </svg>
+              <span>Register Account</span>
+            </a>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 20px; color: #64748b; font-size: 0.88rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+              <span>Open Self-Registration</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #0284c7; display: inline-block;"></span>
+              <span>Role-Based Access (Admin & Staff)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #0d9488; display: inline-block;"></span>
+              <span>Real-Time Audit Logs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Preview Image with Floating Badges -->
+        <div class="landing-hero-preview">
+          <!-- Floating badge top -->
+          <div class="floating-stat-badge badge-top">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #ecfdf5; color: #10b981; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Premises Security</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #065f46;">Active & Verified</div>
+            </div>
+          </div>
+
+          <!-- Main Creative Picture Card -->
+          <div class="landing-preview-card">
+            <img src="assets/images/hero-reception.jpg" alt="Modern Corporate Visitor Check-in Lobby" class="landing-preview-image">
+            <div style="padding: 14px 12px 6px; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; color: #475569;">
+              <span style="font-weight: 600; color: #0f172a;">Front Desk Digital Reception Kiosk</span>
+              <span class="badge badge-success" style="font-size: 0.72rem;">Online Ready</span>
+            </div>
+          </div>
+
+          <!-- Floating badge bottom -->
+          <div class="floating-stat-badge badge-bottom">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #eff6ff; color: #0284c7; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Live Occupancy Tracking</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">1-Click Check-In / Out</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (#about) -->
+  <section class="about-section" id="about">
+    <div class="landing-container">
+      <div class="about-grid">
+        <!-- About Left Column (Story & Details) -->
+        <div class="about-content">
+          <div class="section-tag">About VMS Enterprise</div>
+          <h2>Transforming Reception Desks into Secure Digital Gateways</h2>
+          <p class="about-lead">
+            Traditional paper logbooks pose compliance risks, create reception queues, and lack real-time visibility into who is currently inside your facility.
+          </p>
+          <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px;">
+            <strong>VMS Enterprise</strong> provides an integrated platform connecting receptionists, security officers, host employees, and organizational administrators. Guests are registered digitally with their verified National Identity Card (NIC), routed to their designated department host, and tracked throughout their visit duration.
+          </p>
+
+          <!-- Key Metrics -->
+          <div class="about-metrics">
+            <div class="about-metric-item">
+              <div class="metric-num">99.9%</div>
+              <div class="metric-label">Audit Trail Accuracy</div>
+            </div>
+            <div class="about-metric-item">
+              <div class="metric-num">&lt; 60s</div>
+              <div class="metric-label">Fast Guest Check-In</div>
+            </div>
+            <div class="about-metric-item">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Paperless Digital Records</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="register.html" class="btn btn-primary">Join as Staff Operator &rarr;</a>
+            <a href="help.html" class="btn btn-secondary">Read Operations Manual</a>
+          </div>
+        </div>
+
+        <!-- About Right Column (Creative Picture & Verification Highlight) -->
+        <div class="about-image-wrap">
+          <div class="about-image-card">
+            <img src="assets/images/about-security.jpg" alt="Security Team and Reception Desk Logging Visitors" class="about-image">
+          </div>
+
+          <div class="about-floating-pill">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: #f0fdfa; color: #0d9488; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Identity Verification</div>
+              <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">Strict Host Association</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section (#how-it-works) -->
+  <section class="workflow-section" id="how-it-works">
+    <div class="landing-container">
+      <div class="section-header">
+        <div class="section-tag">Simplified 4-Step Process</div>
+        <h2 class="section-title">How the Visitor Management System Works</h2>
+        <p class="section-subtitle">
+          From first arrival at the security gate to departure recording and automated compliance auditing.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Self-Register or Sign In</h3>
+          <p class="step-desc">
+            Administrators and reception staff access the portal. Any authorized staff member can self-register their account in seconds.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Log Guest Details</h3>
+          <p class="step-desc">
+            Enter the visitor's Full Name, NIC / ID, phone number, email, designated department, and host employee name.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Instant Check-In & Badging</h3>
+          <p class="step-desc">
+            The visit record is marked <code>In Premises</code>. Live occupancy metrics update in real-time on topbar counters and dashboards.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Check-Out & Audit Export</h3>
+          <p class="step-desc">
+            When the guest leaves, click Check-Out with 1 click. Generate daily or monthly summary reports for organizational compliance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Capabilities Grid Section -->
+  <section class="features-section" id="features">
+    <div class="landing-container">
+      <div class="section-header">
+        <div class="section-tag">Enterprise Capabilities</div>
+        <h2 class="section-title">Engineered for Reliability, Speed & Compliance</h2>
+        <p class="section-subtitle">
+          Everything your reception and security team needs to manage premises visitors smoothly and professionally.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Digital Visitor Registration</h3>
+          <p class="feature-desc">
+            Quickly record guest credentials including National ID (NIC), contact phone, visiting department, host employee, and visit purpose.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="background: #f0fdfa; color: #0d9488;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Real-Time Check-In / Out</h3>
+          <p class="feature-desc">
+            Live occupancy monitoring gives front desk and security officers instant clarity on who is currently on-premises vs. who has checked out.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="background: #ecfdf5; color: #10b981;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Daily & Monthly Audit Reports</h3>
+          <p class="feature-desc">
+            Export compliant visitor logs with one click. Filter by date or month, view department breakdowns, and print clean physical reports.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="background: #fffbeb; color: #f59e0b;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Hardened Security Architecture</h3>
+          <p class="feature-desc">
+            Bcrypt cryptographic hashing, parameterized PDO queries to prevent SQL injection, strictly isolated backend endpoints, and session cookies.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="background: #eef2ff; color: #4f46e5;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Live Search & Smart Filtering</h3>
+          <p class="feature-desc">
+            Instantly search across visitors by name, NIC number, or host employee with fast debounced API calls and department dropdowns.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="background: #fdf2f8; color: #ec4899;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">100% Mobile & Tablet Ready</h3>
+          <p class="feature-desc">
+            Responsive design tailored from 1920px down to 360px mobile viewports. Slide-out drawer navigation and touch-friendly controls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Help & Operational Guidelines Section (#help) -->
+  <section class="help-section" id="help">
+    <div class="landing-container">
+      <div class="section-header">
+        <div class="section-tag">Help & Guidelines</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <p class="section-subtitle">
+          Essential operational instructions for system users, receptionists, and organizational staff. Browse guidelines without needing to sign into any dashboard.
+        </p>
+      </div>
+
+      <div class="help-grid">
+        <!-- Help 1 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">1</div>
+            <h3 class="help-card-title">How to Sign In</h3>
+          </div>
+          <p class="help-card-desc">
+            Click <strong>Sign In</strong> in the top navbar or hero section. Enter your credentials. The system administrator accesses the <em>Administrator Command Portal</em>, while registered users/customers enter their personal <em>User Portal</em>.
+          </p>
+        </div>
+
+        <!-- Help 2 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">2</div>
+            <h3 class="help-card-title">How to Register as a User</h3>
+          </div>
+          <p class="help-card-desc">
+            Click <strong>Register</strong> in the top navbar. Provide your Full Name, preferred username, and password (minimum 6 characters). Observe the live password strength meter. Upon successful registration, you can immediately sign in to your personal User Portal.
+          </p>
+        </div>
+
+        <!-- Help 3 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">3</div>
+            <h3 class="help-card-title">How to Book & Pre-Register a Visit</h3>
+          </div>
+          <p class="help-card-desc">
+            Inside your personal User Portal, click <strong>Book a Visit</strong>. Provide your National ID (NIC), contact phone number, designated department, host employee, and purpose. A digital visit pass is generated instantly.
+          </p>
+        </div>
+
+        <!-- Help 4 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">4</div>
+            <h3 class="help-card-title">How to Check In & Check Out</h3>
+          </div>
+          <p class="help-card-desc">
+            <strong>Check-In:</strong> For returning or scheduled guests, click the teal <em>Check-In</em> button in the visitors directory to record a new arrival timestamp.<br>
+            <strong>Check-Out:</strong> When a visitor departs, click the red <em>Check-Out</em> button. Confirm in the dialog to stamp their exit time and update status to <code>Checked Out</code>.
+          </p>
+        </div>
+
+        <!-- Help 5 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">5</div>
+            <h3 class="help-card-title">How to Search & Filter Visitors</h3>
+          </div>
+          <p class="help-card-desc">
+            The visitors directory includes a live debounced search bar. Simply start typing a guest's name, National ID number, or host employee name. You can also filter the table instantly by visiting department, check-in status (In Premises vs. Checked Out), or visit date.
+          </p>
+        </div>
+
+        <!-- Help 6 -->
+        <div class="help-card">
+          <div class="help-card-header">
+            <div class="help-step-badge">6</div>
+            <h3 class="help-card-title">How to Generate Audit Reports</h3>
+          </div>
+          <p class="help-card-desc">
+            Open the <strong>Reports</strong> tab from your portal. You can generate a <em>Daily Log Report</em> by selecting any calendar date, or a <em>Monthly Summary Report</em> with department volume graphs. Click <strong>Print Report</strong> to generate a clean, printer-friendly paper summary.
+          </p>
+        </div>
+
+        <!-- Help 7 -->
+        <div class="help-card" style="grid-column: 1 / -1; background: #f0fdfa; border-color: #99f6e4;">
+          <div class="help-card-header">
+            <div class="help-step-badge" style="background: #ccfbf1; color: #0d9488;">&star;</div>
+            <h3 class="help-card-title" style="color: #0f766e;">Strict Portal Separation & Security Governance</h3>
+          </div>
+          <p class="help-card-desc" style="color: #134e4a;">
+            The <strong>Administrator Portal</strong> is strictly restricted to organization supervisors for managing user accounts, editing passwords, blocking unauthorized operators, and audit oversight. Ordinary staff operators operate solely within the <strong>Front Desk Reception Portal</strong>. Staff users cannot view or access the Admin Command Portal, and administrators have their dedicated management suite.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section (Clean Light Theme) -->
+  <section style="padding: 70px 0; background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%); border-bottom: 1px solid #e2e8f0; text-align: center;">
+    <div class="landing-container" style="max-width: 760px;">
+      <h2 style="font-size: 2.3rem; font-weight: 800; color: #0f172a; margin-bottom: 14px;">
+        Empower Your Organization's Front Desk
+      </h2>
+      <p style="color: #475569; font-size: 1.08rem; line-height: 1.65; margin-bottom: 30px;">
+        Sign in with your credentials or register a new front desk operator account in under 30 seconds.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="login.html" class="btn-hero-primary">Sign In to Portal</a>
+        <a href="register.html" class="btn-hero-secondary">Register New Staff Account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Well-Designed Corporate Light Footer -->
+  <footer class="landing-footer">
+    <div class="landing-container">
+      <div class="landing-footer-grid">
+        <!-- Col 1: Brand & Mission -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <div class="landing-brand-logo" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2.3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <span style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">VMS</span>
+              <span class="landing-brand-badge">Enterprise</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #64748b; margin-bottom: 16px;">
+            A unified, secure, and modern digital reception management platform engineered for institutional compliance and guest safety.
+          </p>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #059669; font-weight: 600;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span>System Status: Fully Operational</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About VMS</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#help">Help Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Access Links -->
+        <div>
+          <div class="footer-col-title">Portal Access</div>
+          <ul class="footer-links-list">
+            <li><a href="login.html">Sign In to Portal</a></li>
+            <li><a href="register.html">Register Staff Account</a></li>
+            <li><a href="visitors.html">Visitors Directory</a></li>
+            <li><a href="reports.html">Attendance Reports</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Security & Compliance -->
+        <div>
+          <div class="footer-col-title">Security Architecture</div>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin-bottom: 12px;">
+            Compliant with organizational access control standards:
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: #475569;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #0284c7;">&bull;</span> Bcrypt Cryptographic Hashing
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #0284c7;">&bull;</span> Parameterized PDO SQL Protection
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #0284c7;">&bull;</span> HttpOnly & SameSite Session Cookies
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #0284c7;">&bull;</span> Strict RBAC (Admin vs Staff)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="landing-footer-bottom">
+        <div>
+          &copy; 2026 Enterprise Visitor Management System (VMS). All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px; color: #64748b;">
+          <span>Version 2.0 Enterprise</span>
+          <span>&bull;</span>
+          <span>Zero Frontend Frameworks</span>
+          <span>&bull;</span>
+          <span>PHP 8+ & MySQL PDO</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Mobile navigation menu toggle
+    const toggleBtn = document.getElementById('landing-menu-toggle');
+    const mobileMenu = document.getElementById('landing-mobile-menu');
+
+    if (toggleBtn && mobileMenu) {
+      toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+      });
+    }
+
+    function toggleMobileMenu() {
+      if (mobileMenu) mobileMenu.classList.remove('open');
+    }
+
+    // Smooth active navigation highlighting based on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 120;
+      const sections = ['home', 'about', 'how-it-works', 'help'];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        const link = document.querySelector(`.landing-nav-links a[href="#${id}"]`);
+        if (el && link) {
+          if (scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
+            document.querySelectorAll('.landing-nav-links a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Officers (Who They Visit) | VMS Enterprise</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="app-sidebar">
+    <!-- Brand Logo -->
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">
+        <svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 6px;">
+        <span style="font-size: 1.35rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">VMS</span>
+        <span style="font-size: 0.92rem; color: #94a3b8; font-weight: 400;">Enterprise</span>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="sidebar-nav">
+      
+      <!-- ADMIN COMMAND -->
+      <div class="sidebar-section-title">ADMIN COMMAND</div>
+      
+      <a href="admin-dashboard.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+        </span>
+        <span>Admin Dashboard</span>
+      </a>
+
+      <a href="visitors.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </span>
+        <span>Visitor Directory</span>
+      </a>
+
+      <a href="reports.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </span>
+        <span>Audit Reports</span>
+      </a>
+
+      <a href="add-visitor.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+        </span>
+        <span>Add / Pre-Book Visitor</span>
+      </a>
+
+      <!-- ADMINISTRATION -->
+      <div class="sidebar-section-title">ADMINISTRATION</div>
+      
+      <a href="users.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </span>
+        <span>User Accounts</span>
+      </a>
+
+      <a href="hosts.html" class="nav-link active">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </span>
+        <span>Host Officers (Hosts)</span>
+      </a>
+
+      <a href="add-user.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+          </svg>
+        </span>
+        <span>Add System User</span>
+      </a>
+
+      <!-- SUPPORT -->
+      <div class="sidebar-section-title">SUPPORT</div>
+
+      <a href="help.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </span>
+        <span>Help & Manual</span>
+      </a>
+
+      <a href="javascript:void(0)" onclick="App.logout()" class="nav-link logout-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Bottom Profile -->
+    <div class="sidebar-footer">
+      <div class="user-card-mini">
+        <div class="user-avatar-circle admin-avatar" style="background: #0284c7; width: 44px; height: 44px; font-weight: 800; font-size: 0.95rem; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">SA</div>
+        <div class="user-meta-mini">
+          <div class="admin-name" style="color: #ffffff; font-weight: 700; font-size: 0.92rem; line-height: 1.2;">System Administrator</div>
+          <div class="admin-sub" style="color: #38bdf8; font-size: 0.78rem; font-weight: 500; margin-top: 2px;">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Layout -->
+  <main class="app-main">
+
+    <!-- Topbar -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" type="button"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="topbar-title-wrap">
+          <h1>Host Officers Management</h1>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Personnel Roster &bull; Who Visitors Meet &bull; Department Directory</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #10b981; background: #ecfdf5; padding: 6px 12px; border-radius: 20px; border: 1px solid #a7f3d0;">
+          <span class="pulse-dot" style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+          <span style="font-weight: 600;">System Online</span>
+        </div>
+        <div class="topbar-clock">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          <span id="topbar-live-clock">--:--</span>
+        </div>
+        <button type="button" onclick="openAddHostModal()" class="btn btn-sm btn-primary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          <span>+ Add Host Officer</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-body">
+
+      <!-- Executive Overview Banner -->
+      <div class="admin-page-hero">
+        <div class="admin-hero-watermark">
+          <svg width="240" height="240" fill="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="admin-hero-content">
+          <div>
+            <div class="admin-hero-tag">
+              <span>PERSONNEL ROSTER &bull; WHO ARE THEY VISITING?</span>
+            </div>
+            <h2 class="admin-hero-title">Host Officers & Staff (People Visitors Meet)</h2>
+            <p class="admin-hero-desc">
+              Administrators add and maintain the staff members, executives, and department personnel who host visitor meetings. When visitors register or book visits, they choose from these officers.
+            </p>
+          </div>
+          <div class="admin-hero-actions">
+            <button type="button" onclick="openAddHostModal()" class="btn btn-sm btn-primary" style="background: #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
+              + Add New Host Officer
+            </button>
+            <a href="visitors.html" class="btn btn-sm btn-secondary" style="border-color: #475569; color: #cbd5e1;">
+              View Visitor Appointments
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 High-Impact KPI Stat Cards -->
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 24px;">
+        
+        <div class="stat-card" style="border-top: 3px solid #0284c7;">
+          <div class="stat-icon-circle" style="background: rgba(2,132,199,0.1); color: #0284c7;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="host-stat-total">--</div>
+            <div class="stat-label">Total Host Personnel</div>
+          </div>
+        </div>
+
+        <div class="stat-card" style="border-top: 3px solid #8b5cf6;">
+          <div class="stat-icon-circle" style="background: rgba(139,92,246,0.1); color: #8b5cf6;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="host-stat-depts">--</div>
+            <div class="stat-label">Departments Covered</div>
+          </div>
+        </div>
+
+        <div class="stat-card" style="border-top: 3px solid #10b981; background: #f0fdf4;">
+          <div class="stat-icon-circle" style="background: rgba(16,185,129,0.15); color: #059669;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="host-stat-active" style="color: #059669;">--</div>
+            <div class="stat-label">Available for Meetings</div>
+          </div>
+        </div>
+
+        <div class="stat-card" style="border-top: 3px solid #f59e0b;">
+          <div class="stat-icon-circle" style="background: rgba(245,158,11,0.1); color: #d97706;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="host-stat-verified">Active</div>
+            <div class="stat-label">Security Verified Directory</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls & Search Card -->
+      <div class="card" style="margin-bottom: 24px; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 280px;">
+            <div class="input-with-icon" style="flex: 1;">
+              <span class="input-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              </span>
+              <input type="text" id="host-search-input" class="form-control" placeholder="Search hosts by Name, Title, or Office...">
+            </div>
+            <select id="host-filter-dept" class="form-select" style="max-width: 220px;">
+              <option value="">All Departments</option>
+            </select>
+          </div>
+          <button type="button" onclick="openAddHostModal()" class="btn btn-primary">
+            + Add New Host Officer
+          </button>
+        </div>
+      </div>
+
+      <!-- Host Officers Table Card -->
+      <div class="table-card" style="border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);">
+        <div style="padding: 16px 20px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="font-weight: 700; font-size: 1rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>Registered Host Officers Roster</span>
+            <span id="hosts-table-badge" class="badge badge-navy" style="font-size: 0.75rem;">0</span>
+          </div>
+          <div style="font-size: 0.8rem; color: #64748b;">
+            Visitors can select any of these staff members when booking appointments
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Officer Details</th>
+                <th>Department</th>
+                <th>Designation / Title</th>
+                <th>Office / Room</th>
+                <th>Phone Extension</th>
+                <th>Email Contact</th>
+                <th style="min-width: 100px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="hosts-tbody">
+              <tr>
+                <td colspan="7" style="text-align:center; padding: 40px;"><span class="spinner"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ==============================================
+     ADD HOST OFFICER MODAL
+     ============================================== -->
+<div class="modal" id="add-host-modal" style="display:none; position: fixed; inset: 0; z-index: 1060; background: rgba(15,23,42,0.7); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px;">
+  <div class="modal-content" style="background: #ffffff; border-radius: 16px; max-width: 550px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); border: 1px solid #e2e8f0;">
+    <div style="padding: 18px 24px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Add New Host Officer</h3>
+        <p style="font-size: 0.82rem; color: #64748b; margin: 0;">Visitors will be eligible to meet this person.</p>
+      </div>
+      <button type="button" onclick="closeAddHostModal()" style="background:none; border:none; font-size: 1.5rem; color: #94a3b8; cursor: pointer;">&times;</button>
+    </div>
+    <form id="add-host-form" onsubmit="submitNewHost(event)">
+      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+        <div class="form-group">
+          <label class="form-label" for="host-name">Officer Full Name <span class="required">*</span></label>
+          <input type="text" id="host-name" class="form-control" placeholder="e.g. Dr. Arthur Vance" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="host-dept">Visiting Department <span class="required">*</span></label>
+          <select id="host-dept" class="form-select" required>
+            <option value="">Select Department...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="host-title">Designation / Role Title <span class="required">*</span></label>
+          <input type="text" id="host-title" class="form-control" placeholder="e.g. Chief Technology Officer" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="host-room">Office / Room Location</label>
+            <input type="text" id="host-room" class="form-control" placeholder="e.g. Executive Wing 4B">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="host-phone">Phone Extension</label>
+            <input type="text" id="host-phone" class="form-control" placeholder="e.g. Ext 401 / +94 77 123 4567">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="host-email">Email Address</label>
+          <input type="email" id="host-email" class="form-control" placeholder="e.g. arthur@vms-enterprise.com">
+        </div>
+      </div>
+      <div style="padding: 16px 24px; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; gap: 10px; background: #f8fafc; border-radius: 0 0 16px 16px;">
+        <button type="button" onclick="closeAddHostModal()" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Host Officer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="js/app.js"></script>
+
+<script>
+let allHostsList = [];
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const user = await App.checkAuth(true); // Enforce admin
+  if (!user) return;
+  App.initSidebar();
+  loadDeptsFilter();
+  loadHosts();
+
+  document.getElementById('host-search-input')?.addEventListener('input', filterHosts);
+  document.getElementById('host-filter-dept')?.addEventListener('change', filterHosts);
+});
+
+async function loadDeptsFilter() {
+  try {
+    const res = await App.request('departments/get_departments.php');
+    const depts = res.data?.departments || [];
+    const filterSel = document.getElementById('host-filter-dept');
+    const modalSel = document.getElementById('host-dept');
+    
+    if (filterSel) {
+      filterSel.innerHTML = '<option value="">All Departments</option>' + 
+        depts.map(d => `<option value="${d.DepartmentID}">${App.escapeHtml(d.Name)}</option>`).join('');
+    }
+    if (modalSel) {
+      modalSel.innerHTML = '<option value="">Select Department...</option>' + 
+        depts.map(d => `<option value="${d.DepartmentID}">${App.escapeHtml(d.Name)}</option>`).join('');
+    }
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+async function loadHosts() {
+  const tbody = document.getElementById('hosts-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 36px;"><span class="spinner"></span></td></tr>';
+
+  try {
+    const res = await App.request('hosts/get_hosts.php');
+    allHostsList = res.data?.hosts || [];
+    
+    // Update KPI stats
+    const totalEl = document.getElementById('host-stat-total');
+    const activeEl = document.getElementById('host-stat-active');
+    const deptsEl = document.getElementById('host-stat-depts');
+    const badgeEl = document.getElementById('hosts-table-badge');
+
+    if (totalEl) totalEl.textContent = allHostsList.length;
+    if (activeEl) activeEl.textContent = allHostsList.filter(h => h.Status === 'active').length;
+    if (badgeEl) badgeEl.textContent = allHostsList.length;
+
+    const uniqueDepts = new Set(allHostsList.map(h => h.DepartmentID));
+    if (deptsEl) deptsEl.textContent = uniqueDepts.size;
+
+    renderHostsTable(allHostsList);
+  } catch(err) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger); padding:32px;">Failed to load hosts: ${App.escapeHtml(err.message)}</td></tr>`;
+  }
+}
+
+function renderHostsTable(hosts) {
+  const tbody = document.getElementById('hosts-tbody');
+  if (!tbody) return;
+
+  if (hosts.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No host officers found. Click "+ Add New Host Officer" to add staff.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = hosts.map(h => {
+    const initials = h.Name ? h.Name.split(' ').map(p => p[0]).join('').substring(0, 2).toUpperCase() : 'H';
+    return `
+      <tr>
+        <td>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:38px; height:38px; border-radius:50%; background:#e0f2fe; color:#0284c7; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              ${initials}
+            </div>
+            <div>
+              <div class="font-semibold" style="font-size:0.95rem; color:#0f172a;">${App.escapeHtml(h.Name)}</div>
+              <div style="font-size:0.75rem; color:#64748b;">Host ID: #${h.HostID}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span class="badge badge-navy" style="font-size:0.8rem;">${App.escapeHtml(h.DepartmentName || 'General')}</span>
+        </td>
+        <td>
+          <div style="font-weight:600; color:#334155;">${App.escapeHtml(h.Designation || '-')}</div>
+        </td>
+        <td>
+          <span style="display:inline-flex; align-items:center; gap:4px; font-size:0.85rem; color:#475569;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            ${App.escapeHtml(h.OfficeRoom || 'Main Building')}
+          </span>
+        </td>
+        <td>
+          <span style="font-family:monospace; font-size:0.85rem;">${App.escapeHtml(h.Phone || '-')}</span>
+        </td>
+        <td>
+          <span style="font-size:0.85rem; color:#64748b;">${App.escapeHtml(h.Email || '-')}</span>
+        </td>
+        <td>
+          <button type="button" class="btn btn-sm btn-secondary text-danger" onclick="deleteHost(${h.HostID}, '${App.escapeHtml(h.Name)}')">
+            &times; Delete
+          </button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function filterHosts() {
+  const q = document.getElementById('host-search-input')?.value.toLowerCase().trim() || '';
+  const d = document.getElementById('host-filter-dept')?.value || '';
+
+  const filtered = allHostsList.filter(h => {
+    const matchQ = !q || (h.Name && h.Name.toLowerCase().includes(q)) || 
+                          (h.Designation && h.Designation.toLowerCase().includes(q)) || 
+                          (h.OfficeRoom && h.OfficeRoom.toLowerCase().includes(q));
+    const matchD = !d || String(h.DepartmentID) === String(d);
+    return matchQ && matchD;
+  });
+
+  renderHostsTable(filtered);
+}
+
+function openAddHostModal() {
+  const m = document.getElementById('add-host-modal');
+  if (m) m.style.display = 'flex';
+}
+
+function closeAddHostModal() {
+  const m = document.getElementById('add-host-modal');
+  if (m) m.style.display = 'none';
+}
+
+async function submitNewHost(e) {
+  e.preventDefault();
+  const name = document.getElementById('host-name')?.value.trim();
+  const dept = document.getElementById('host-dept')?.value;
+  const title = document.getElementById('host-title')?.value.trim();
+  const room = document.getElementById('host-room')?.value.trim();
+  const phone = document.getElementById('host-phone')?.value.trim();
+  const email = document.getElementById('host-email')?.value.trim();
+
+  if (!name || !dept || !title) {
+    App.showToast('error', 'Validation', 'Name, Department, and Designation are required.');
+    return;
+  }
+
+  try {
+    await App.request('hosts/add_host.php', {
+      method: 'POST',
+      body: JSON.stringify({ name, department_id: dept, designation: title, office_room: room, phone, email })
+    });
+    App.showToast('success', 'Host Added', `${name} is now available for visitor appointments.`);
+    document.getElementById('add-host-form')?.reset();
+    closeAddHostModal();
+    loadHosts();
+  } catch(err) {
+    App.showToast('error', 'Error', err.message);
+  }
+}
+
+async function deleteHost(hostId, name) {
+  if (!confirm(`Are you sure you want to remove ${name} from the active host roster?`)) return;
+  try {
+    await App.request('hosts/delete_host.php', {
+      method: 'POST',
+      body: JSON.stringify({ host_id: hostId })
+    });
+    App.showToast('success', 'Host Removed', `${name} was removed from the host roster.`);
+    loadHosts();
+  } catch(err) {
+    App.showToast('error', 'Error', err.message);
+  }
+}
+</script>
+
+</body>
+</html>

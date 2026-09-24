@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="100%" height="auto" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Desk Base -->
+  <rect x="50" y="220" width="400" height="20" rx="4" fill="#334155"/>
+  <rect x="80" y="240" width="340" height="70" rx="6" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Reception Computer / Terminal -->
+  <rect x="190" y="140" width="120" height="80" rx="6" fill="#0f172a" stroke="#2563eb" stroke-width="2"/>
+  <rect x="200" y="150" width="100" height="60" rx="3" fill="#1e293b"/>
+  <line x1="210" y1="165" x2="260" y2="165" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="210" y1="175" x2="280" y2="175" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="210" y1="185" x2="245" y2="185" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <rect x="240" y="220" width="20" height="15" fill="#334155"/>
+  <rect x="230" y="235" width="40" height="4" rx="2" fill="#475569"/>
+
+  <!-- Shield Badge Hologram -->
+  <circle cx="250" cy="80" r="45" fill="url(#badgeGrad)" opacity="0.15"/>
+  <path d="M250 50L275 62V88C275 105 264 117 250 122C236 117 225 105 225 88V62L250 50Z" fill="url(#badgeGrad)"/>
+  <path d="M242 85L248 91L258 79" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Check-in Pass Card Float Left -->
+  <rect x="70" y="110" width="90" height="60" rx="8" fill="#1e293b" stroke="#0d9488" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.3))"/>
+  <circle cx="92" cy="132" r="10" fill="#0d9488" opacity="0.3"/>
+  <rect x="110" y="126" width="40" height="5" rx="2" fill="#e2e8f0"/>
+  <rect x="110" y="136" width="30" height="4" rx="2" fill="#64748b"/>
+  <rect x="85" y="152" width="60" height="4" rx="2" fill="#10b981"/>
+
+  <!-- Stats Graph Float Right -->
+  <rect x="340" y="110" width="95" height="65" rx="8" fill="#1e293b" stroke="#2563eb" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.3))"/>
+  <path d="M355 155L370 140L385 145L400 130L420 125" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="420" cy="125" r="3" fill="#38bdf8"/>
+</svg>

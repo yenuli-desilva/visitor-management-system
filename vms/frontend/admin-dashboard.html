@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | VMS Enterprise</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Dark Navy Executive Sidebar (exact matching reference) */
+    .app-sidebar {
+      background-color: #0b1320;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .sidebar-brand {
+      height: 72px;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sidebar-brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #06b6d4, #0d9488);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+    }
+    .sidebar-section-title {
+      color: #64748b;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 14px 6px;
+    }
+    .nav-link {
+      color: #94a3b8;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    .nav-link.active {
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+    .nav-link.logout-link {
+      color: #f87171 !important;
+    }
+    .nav-link.logout-link:hover {
+      background-color: rgba(239, 68, 68, 0.12);
+      color: #fca5a5 !important;
+    }
+    .sidebar-footer {
+      padding: 18px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background-color: #070d18;
+    }
+    .user-card-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .user-avatar-circle.admin-avatar {
+      width: 44px;
+      height: 44px;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .admin-name {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.2;
+    }
+    .admin-sub {
+      color: #38bdf8;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    /* Pulse Dot for System Online */
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<div class="app-container">
+
+  <!-- Admin Sidebar (Matching the exact design) -->
+  <aside class="app-sidebar">
+    <!-- Brand Logo -->
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">
+        <svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 6px;">
+        <span style="font-size: 1.35rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">VMS</span>
+        <span style="font-size: 0.92rem; color: #94a3b8; font-weight: 400;">Enterprise</span>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="sidebar-nav">
+      
+      <!-- ADMIN COMMAND -->
+      <div class="sidebar-section-title">ADMIN COMMAND</div>
+      
+      <a href="admin-dashboard.html" class="nav-link active">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+        </span>
+        <span>Admin Dashboard</span>
+      </a>
+
+      <a href="visitors.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </span>
+        <span>Visitor Directory</span>
+      </a>
+
+      <a href="reports.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </span>
+        <span>Audit Reports</span>
+      </a>
+
+      <a href="add-visitor.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+        </span>
+        <span>Add / Pre-Book Visitor</span>
+      </a>
+
+      <!-- ADMINISTRATION -->
+      <div class="sidebar-section-title">ADMINISTRATION</div>
+      
+      <a href="users.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </span>
+        <span>User Accounts</span>
+      </a>
+
+      <a href="hosts.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </span>
+        <span>Host Officers (Hosts)</span>
+      </a>
+
+      <a href="add-user.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+          </svg>
+        </span>
+        <span>Add System User</span>
+      </a>
+
+      <!-- SUPPORT -->
+      <div class="sidebar-section-title">SUPPORT</div>
+
+      <a href="help.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </span>
+        <span>Help & Manual</span>
+      </a>
+
+      <a href="javascript:void(0)" onclick="App.logout()" class="nav-link logout-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Bottom Profile (Matching Screenshot) -->
+    <div class="sidebar-footer">
+      <div class="user-card-mini">
+        <div class="user-avatar-circle admin-avatar">SA</div>
+        <div class="user-meta-mini">
+          <div class="admin-name">System Administrator</div>
+          <div class="admin-sub">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Layout -->
+  <main class="app-main">
+
+    <!-- Top Navigation Bar -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Toggle Menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="topbar-title-wrap">
+          <h1>Administrator Command Center</h1>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Full Operational Control &bull; Visitor Appointment Dispatch &bull; User Provisioning</p>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #10b981; background: #ecfdf5; padding: 6px 12px; border-radius: 20px; border: 1px solid #a7f3d0;">
+          <span class="pulse-dot"></span>
+          <span style="font-weight: 600;">System Online</span>
+        </div>
+
+        <div class="topbar-clock">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          <span id="topbar-live-clock">--:--</span>
+        </div>
+
+        <button type="button" onclick="openAdminHostsModal()" class="btn btn-sm btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <span>Host Officers</span>
+        </button>
+
+        <button type="button" onclick="openAdminAddVisitorModal()" class="btn btn-sm btn-primary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          <span>+ Add Visitor</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Body Container -->
+    <div class="app-body">
+
+      <!-- Executive Overview Banner -->
+      <div class="card" style="padding: 22px 28px; background: linear-gradient(135deg, #0b1320, #1e293b); color: #fff; border: 1px solid #334155; margin-bottom: 24px; position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; top: -20px; opacity: 0.05; pointer-events: none;">
+          <svg width="220" height="220" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; position: relative; z-index: 1;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <span class="badge" style="background: rgba(2,132,199,0.25); color: #38bdf8; border: 1px solid rgba(2,132,199,0.4);">EXECUTIVE COMMAND</span>
+              <span style="font-size: 0.82rem; color: #94a3b8;">PHP 8.2 &bull; MySQL PDO &bull; Hardened Session</span>
+            </div>
+            <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 6px;">Master Visitor Management & Access Control</h2>
+            <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0; max-width: 650px;">
+              Oversee organizational appointments, register arriving visitors, assign hosts, and monitor premises occupancy in real time.
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" onclick="openAdminAddVisitorModal()" class="btn btn-sm btn-primary" style="background: #0284c7;">
+              + Register New Visitor
+            </button>
+            <button type="button" onclick="openAdminHostsModal()" class="btn btn-sm btn-secondary" style="border-color: #475569; color: #cbd5e1;">
+              Host Officers (Who They Visit)
+            </button>
+            <a href="users.html" class="btn btn-sm btn-secondary" style="border-color: #475569; color: #cbd5e1;">
+              Manage User Accounts
+            </a>
+            <a href="reports.html" class="btn btn-sm btn-secondary" style="border-color: #475569; color: #cbd5e1;">
+              Audit Reports
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 High-Impact KPI Stat Cards -->
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 28px;">
+        
+        <!-- Total Registered Users -->
+        <div class="stat-card" style="border-top: 3px solid #0284c7;">
+          <div class="stat-icon-circle" style="background: rgba(2,132,199,0.1); color: #0284c7;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="stat-total-users">--</div>
+            <div class="stat-label">Registered User Accounts</div>
+          </div>
+        </div>
+
+        <!-- Total All-Time Visitors -->
+        <div class="stat-card" style="border-top: 3px solid #0d9488;">
+          <div class="stat-icon-circle" style="background: rgba(13,148,136,0.1); color: #0d9488;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="stat-total-visitors">--</div>
+            <div class="stat-label">All-Time Visitors Logged</div>
+          </div>
+        </div>
+
+        <!-- Active In Premises -->
+        <div class="stat-card" style="border-top: 3px solid #10b981; background: #f0fdf4;">
+          <div class="stat-icon-circle" style="background: rgba(16,185,129,0.15); color: #10b981;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="stat-checked-in" style="color: #065f46;">--</div>
+            <div class="stat-label" style="color: #047857; font-weight: 600;">In Premises Now</div>
+          </div>
+        </div>
+
+        <!-- Today's Visits -->
+        <div class="stat-card" style="border-top: 3px solid #f59e0b;">
+          <div class="stat-icon-circle" style="background: rgba(245,158,11,0.1); color: #f59e0b;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="stat-data">
+            <div class="stat-value" id="stat-today-visits">--</div>
+            <div class="stat-label">Today's Total Check-Ins</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Appointments & Visitors Management Card -->
+      <div class="card" style="margin-bottom: 28px;">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 class="card-title">Recent Visitor Appointments & Movements</h2>
+            <p class="card-subtitle">Real-time tracking of who visitors are meeting, their department, and check-in/out status</p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button type="button" onclick="openAdminAddVisitorModal()" class="btn btn-sm btn-primary">
+              + Add / Schedule Visitor
+            </button>
+            <a href="visitors.html" class="btn btn-sm btn-secondary">Full Visitor Directory</a>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Visitor & NIC</th>
+                <th>Department</th>
+                <th>Meeting With (Host)</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="recent-visitors-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 28px;"><span class="spinner"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Two-Column Section: 7-Day Chart & Registered User Accounts -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 24px; margin-bottom: 28px;">
+        
+        <!-- Visitor Traffic Analytics Chart -->
+        <div class="card">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h2 class="card-title">7-Day Visitor Volume Analytics</h2>
+              <p class="card-subtitle">Daily trend of premises guest check-ins</p>
+            </div>
+            <span class="badge badge-info">MySQL Live Telemetry</span>
+          </div>
+          <div class="card-body">
+            <div id="dashboard-chart-container" style="min-height: 210px;">
+              <div style="text-align: center; padding: 40px;"><span class="spinner"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System User Accounts Summary -->
+        <div class="card">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h2 class="card-title">Registered User Accounts</h2>
+              <p class="card-subtitle">Platform users who register and schedule visits</p>
+            </div>
+            <a href="users.html" class="btn btn-sm btn-secondary">View All Users</a>
+          </div>
+          <div class="table-container" style="max-height: 260px; overflow-y: auto;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Full Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="admin-users-tbody">
+                <tr>
+                  <td colspan="4" style="text-align: center; padding: 24px;"><span class="spinner"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Admin Add / Pre-Book Visitor Modal -->
+<div id="admin-add-visitor-modal" class="modal-overlay">
+  <div class="modal-dialog" style="max-width: 560px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Register / Pre-Book Visitor</h3>
+      <button type="button" class="modal-close" onclick="App.closeModal('admin-add-visitor-modal')">&times;</button>
+    </div>
+    <form id="admin-add-visitor-form">
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <div id="admin-modal-alert" class="auth-alert" style="display: none;"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="adm-v-name">Visitor Full Name <span class="required">*</span></label>
+          <input type="text" id="adm-v-name" class="form-control" placeholder="e.g. Rachel Adams" required autofocus>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label" for="adm-v-nic">National ID / NIC <span class="required">*</span></label>
+            <input type="text" id="adm-v-nic" class="form-control" placeholder="e.g. 199512345678" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adm-v-phone">Phone Number</label>
+            <input type="text" id="adm-v-phone" class="form-control" placeholder="e.g. 0771234567">
+          </div>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label" for="adm-v-dept">Visiting Department <span class="required">*</span></label>
+            <select id="adm-v-dept" class="form-control" required onchange="filterAdminHostsByDepartment()">
+              <option value="">Select Department...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" for="adm-v-host" style="margin: 0;">Who Are They Visiting? (Host) <span class="required">*</span></label>
+              <button type="button" onclick="openAdminAddHostModal()" class="btn-link" style="font-size: 0.76rem; color: #0284c7; background: none; border: none; cursor: pointer; font-weight: 700;">+ Add Host</button>
+            </div>
+            <select id="adm-v-host" class="form-control" required onchange="syncAdminDepartmentFromHost()">
+              <option value="">Select Host Officer to Meet...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="adm-v-purpose">Purpose of Visit <span class="required">*</span></label>
+          <input type="text" id="adm-v-purpose" class="form-control" placeholder="e.g. Official Meeting / Project Review" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="App.closeModal('admin-add-visitor-modal')">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="btn-adm-submit-visitor">Save & Register Visitor</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal 2: Host Officers Directory Modal -->
+<div id="admin-hosts-modal" class="modal-overlay">
+  <div class="modal-dialog" style="max-width: 780px;">
+    <div class="modal-header">
+      <div>
+        <h3 class="modal-title" style="margin: 0;">Host Officers & Meeting Personnel Directory</h3>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 3px 0 0 0;">Manage organization staff members whom visitors and guests can schedule meetings with.</p>
+      </div>
+      <button type="button" class="modal-close" onclick="App.closeModal('admin-hosts-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          Total Active Hosts: <strong id="hosts-count-badge" style="color: #0284c7;">0</strong>
+        </div>
+        <button type="button" onclick="openAdminAddHostModal()" class="btn btn-sm btn-primary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          <span>+ Add New Host Officer</span>
+        </button>
+      </div>
+
+      <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Host Officer</th>
+              <th>Department</th>
+              <th>Designation</th>
+              <th>Office / Room</th>
+              <th>Contact</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-hosts-tbody">
+            <tr>
+              <td colspan="6" style="text-align:center; padding: 24px;"><span class="spinner"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onclick="App.closeModal('admin-hosts-modal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Add Host Officer Modal -->
+<div id="admin-add-host-modal" class="modal-overlay">
+  <div class="modal-dialog" style="max-width: 520px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Register New Host Officer</h3>
+      <button type="button" class="modal-close" onclick="App.closeModal('admin-add-host-modal')">&times;</button>
+    </div>
+    <form id="admin-add-host-form">
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <div id="admin-add-host-alert" class="auth-alert" style="display: none;"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="host-f-name">Officer Full Name <span class="required">*</span></label>
+          <input type="text" id="host-f-name" class="form-control" placeholder="e.g. Dr. Kamal Perera" required>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label" for="host-f-dept">Department <span class="required">*</span></label>
+            <select id="host-f-dept" class="form-control" required>
+              <option value="">Select Department...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="host-f-designation">Designation / Title <span class="required">*</span></label>
+            <input type="text" id="host-f-designation" class="form-control" placeholder="e.g. IT Director / Senior Manager" required>
+          </div>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label" for="host-f-phone">Phone Number</label>
+            <input type="text" id="host-f-phone" class="form-control" placeholder="e.g. 0771234567">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="host-f-email">Email Address</label>
+            <input type="email" id="host-f-email" class="form-control" placeholder="e.g. officer@vms.org">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="host-f-room">Office Room / Floor Location</label>
+          <input type="text" id="host-f-room" class="form-control" placeholder="e.g. Room 402 - Level 4">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="App.closeModal('admin-add-host-modal')">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="btn-submit-new-host">Save Host Officer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+  let cachedAdminHosts = [];
+  let cachedAdminDepts = [];
+
+  // Strictly enforce Admin Portal
+  document.addEventListener('DOMContentLoaded', async () => {
+    const user = await App.checkAuth('admin'); // strictly require admin
+    if (!user || user.role !== 'admin') {
+      window.location.replace('user-dashboard.html?error=admin_only');
+      return;
+    }
+
+    // Load Admin User Accounts Table
+    loadAdminUsers();
+
+    // Load departments for modals
+    await loadAdminDepartments();
+
+    // Load hosts list
+    await loadAdminHosts();
+
+    // Admin Add Visitor Form Handler
+    const visitorForm = document.getElementById('admin-add-visitor-form');
+    if (visitorForm) {
+      visitorForm.addEventListener('submit', handleAdminAddVisitor);
+    }
+
+    // Admin Add Host Form Handler
+    const hostForm = document.getElementById('admin-add-host-form');
+    if (hostForm) {
+      hostForm.addEventListener('submit', handleAdminAddHostSubmit);
+    }
+  });
+
+  async function loadAdminUsers() {
+    try {
+      const res = await App.request('users/get_users.php');
+      const users = res.data?.users || [];
+      const tbody = document.getElementById('admin-users-tbody');
+      if (tbody) {
+        if (users.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="4" class="text-muted" style="text-align:center; padding: 20px;">No registered users found.</td></tr>';
+        } else {
+          tbody.innerHTML = users.slice(0, 5).map(u => `
+            <tr>
+              <td><strong style="color: var(--primary-subtle);">${App.escapeHtml(u.Username)}</strong></td>
+              <td>${App.escapeHtml(u.FullName)}</td>
+              <td><span class="badge ${u.Role === 'admin' ? 'badge-admin' : 'badge-user'}">${u.Role === 'admin' ? 'Admin' : 'User'}</span></td>
+              <td><span class="badge ${u.Status === 'active' ? 'badge-in' : 'badge-out'}">${u.Status}</span></td>
+            </tr>
+          `).join('');
+        }
+      }
+    } catch (e) {
+      console.warn('Could not load admin users preview:', e);
+    }
+  }
+
+  async function loadAdminDepartments() {
+    try {
+      const res = await App.request('departments/get_departments.php');
+      cachedAdminDepts = res.data?.departments || [];
+      
+      const vDeptSelect = document.getElementById('adm-v-dept');
+      if (vDeptSelect) {
+        vDeptSelect.innerHTML = '<option value="">Select Department...</option>' + 
+          cachedAdminDepts.map(d => `<option value="${d.DepartmentID}">${App.escapeHtml(d.Name)}</option>`).join('');
+      }
+
+      const hDeptSelect = document.getElementById('host-f-dept');
+      if (hDeptSelect) {
+        hDeptSelect.innerHTML = '<option value="">Select Department...</option>' + 
+          cachedAdminDepts.map(d => `<option value="${d.DepartmentID}">${App.escapeHtml(d.Name)}</option>`).join('');
+      }
+    } catch (e) {
+      console.warn('Could not load departments for admin:', e);
+    }
+  }
+
+  async function loadAdminHosts() {
+    try {
+      const res = await App.request('hosts/get_hosts.php');
+      cachedAdminHosts = res.data?.hosts || [];
+
+      // 1. Populate Hosts in Add Visitor modal
+      populateAdminHostDropdown(cachedAdminHosts);
+
+      // 2. Populate Hosts Directory Table in modal
+      renderAdminHostsTable(cachedAdminHosts);
+
+    } catch (e) {
+      console.warn('Could not load hosts:', e);
+    }
+  }
+
+  function populateAdminHostDropdown(hosts) {
+    const hostSelect = document.getElementById('adm-v-host');
+    if (!hostSelect) return;
+
+    if (hosts.length === 0) {
+      hostSelect.innerHTML = '<option value="">No host officers found</option>';
+      return;
+    }
+
+    hostSelect.innerHTML = '<option value="">Select Host Officer to Meet...</option>' +
+      hosts.map(h => `
+        <option value="${App.escapeHtml(h.Name)}" data-dept-id="${h.DepartmentID}" data-title="${App.escapeHtml(h.Designation)}">
+          ${App.escapeHtml(h.Name)} (${App.escapeHtml(h.DepartmentName)} - ${App.escapeHtml(h.Designation)})
+        </option>
+      `).join('');
+  }
+
+  function renderAdminHostsTable(hosts) {
+    const tbody = document.getElementById('admin-hosts-tbody');
+    const countBadge = document.getElementById('hosts-count-badge');
+    if (countBadge) countBadge.textContent = hosts.length;
+    if (!tbody) return;
+
+    if (hosts.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="text-muted" style="text-align:center; padding: 24px;">No host officers registered yet. Click "+ Add New Host Officer" above to add one.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = hosts.map(h => `
+      <tr>
+        <td>
+          <div style="font-weight: 700; color: #0f172a;">${App.escapeHtml(h.Name)}</div>
+        </td>
+        <td><span class="badge badge-user">${App.escapeHtml(h.DepartmentName)}</span></td>
+        <td><span style="font-size: 0.88rem; color: var(--text-main); font-weight: 500;">${App.escapeHtml(h.Designation)}</span></td>
+        <td><span style="font-size: 0.84rem; color: var(--text-muted);">${App.escapeHtml(h.OfficeRoom || 'Main Building')}</span></td>
+        <td>
+          <div style="font-size: 0.82rem;">${App.escapeHtml(h.Phone || '--')}</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">${App.escapeHtml(h.Email || '')}</div>
+        </td>
+        <td style="text-align: right;">
+          <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteAdminHost(${h.HostID}, '${App.escapeHtml(h.Name)}')">
+            Delete
+          </button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function syncAdminDepartmentFromHost() {
+    const hostSelect = document.getElementById('adm-v-host');
+    const deptSelect = document.getElementById('adm-v-dept');
+    if (!hostSelect || !deptSelect) return;
+
+    const selectedOption = hostSelect.options[hostSelect.selectedIndex];
+    if (selectedOption && selectedOption.dataset.deptId) {
+      deptSelect.value = selectedOption.dataset.deptId;
+    }
+  }
+
+  function filterAdminHostsByDepartment() {
+    const deptSelect = document.getElementById('adm-v-dept');
+    const selectedDeptId = deptSelect.value ? parseInt(deptSelect.value, 10) : null;
+
+    if (!selectedDeptId) {
+      populateAdminHostDropdown(cachedAdminHosts);
+    } else {
+      const filtered = cachedAdminHosts.filter(h => h.DepartmentID === selectedDeptId);
+      populateAdminHostDropdown(filtered);
+    }
+  }
+
+  function openAdminHostsModal() {
+    renderAdminHostsTable(cachedAdminHosts);
+    App.openModal('admin-hosts-modal');
+  }
+
+  function openAdminAddHostModal() {
+    document.getElementById('admin-add-host-form').reset();
+    const alertBox = document.getElementById('admin-add-host-alert');
+    if (alertBox) alertBox.style.display = 'none';
+    App.openModal('admin-add-host-modal');
+  }
+
+  async function handleAdminAddHostSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btn-submit-new-host');
+    const alertBox = document.getElementById('admin-add-host-alert');
+
+    const name = document.getElementById('host-f-name').value.trim();
+    const department_id = document.getElementById('host-f-dept').value;
+    const designation = document.getElementById('host-f-designation').value.trim();
+    const phone = document.getElementById('host-f-phone').value.trim();
+    const email = document.getElementById('host-f-email').value.trim();
+    const office_room = document.getElementById('host-f-room').value.trim();
+
+    if (!name || !department_id || !designation) {
+      alertBox.textContent = 'Please fill in Name, Department, and Designation.';
+      alertBox.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+      const res = await App.request('hosts/add_host.php', {
+        method: 'POST',
+        body: { name, department_id, designation, phone, email, office_room }
+      });
+
+      App.showToast('success', 'Host Added', res.message);
+      App.closeModal('admin-add-host-modal');
+      document.getElementById('admin-add-host-form').reset();
+
+      // Reload hosts list & update dropdowns
+      await loadAdminHosts();
+
+      // If Add Visitor modal was open, auto-select this new host
+      const hostSelect = document.getElementById('adm-v-host');
+      if (hostSelect) {
+        hostSelect.value = name;
+        syncAdminDepartmentFromHost();
+      }
+    } catch (err) {
+      alertBox.textContent = err.message;
+      alertBox.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Save Host Officer';
+    }
+  }
+
+  async function deleteAdminHost(id, name) {
+    App.confirm('Delete Host Officer', `Are you sure you want to delete ${name}? Visitors will no longer be able to select this host.`, async () => {
+      try {
+        const res = await App.request('hosts/delete_host.php', {
+          method: 'POST',
+          body: { host_id: id }
+        });
+        App.showToast('success', 'Host Removed', res.message);
+        await loadAdminHosts();
+      } catch (err) {
+        App.showToast('error', 'Delete Failed', err.message);
+      }
+    }, 'Delete Officer', 'btn-danger');
+  }
+
+  function openAdminAddVisitorModal() {
+    App.openModal('admin-add-visitor-modal');
+  }
+
+  async function handleAdminAddVisitor(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btn-adm-submit-visitor');
+    const alertBox = document.getElementById('admin-modal-alert');
+    
+    const name = document.getElementById('adm-v-name').value.trim();
+    const nic = document.getElementById('adm-v-nic').value.trim();
+    const phone = document.getElementById('adm-v-phone').value.trim();
+    const department_id = document.getElementById('adm-v-dept').value;
+    const host = document.getElementById('adm-v-host').value.trim();
+    const purpose = document.getElementById('adm-v-purpose').value.trim();
+
+    if (!name || !nic || !department_id || !host || !purpose) {
+      alertBox.textContent = 'Please fill in all required fields.';
+      alertBox.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+      const res = await App.request('visitors/add_visitor.php', {
+        method: 'POST',
+        body: { name, nic, phone, department_id, host, purpose }
+      });
+
+      App.showToast('success', 'Visitor Registered', res.message);
+      App.closeModal('admin-add-visitor-modal');
+      document.getElementById('admin-add-visitor-form').reset();
+      
+      // Reload stats and tables
+      if (typeof loadDashboardData === 'function') {
+        loadDashboardData();
+      }
+    } catch (err) {
+      alertBox.textContent = err.message;
+      alertBox.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Save & Register Visitor';
+    }
+  }
+</script>
+
+</body>
+</html>

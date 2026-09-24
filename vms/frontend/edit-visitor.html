@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Visitor | VMS Enterprise</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="app-sidebar">
+    <!-- Brand Logo -->
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">
+        <svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 6px;">
+        <span style="font-size: 1.35rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">VMS</span>
+        <span style="font-size: 0.92rem; color: #94a3b8; font-weight: 400;">Enterprise</span>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="sidebar-nav">
+      
+      <!-- ADMIN COMMAND -->
+      <div class="sidebar-section-title">ADMIN COMMAND</div>
+      
+      <a href="admin-dashboard.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+        </span>
+        <span>Admin Dashboard</span>
+      </a>
+
+      <a href="visitors.html" class="nav-link active">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </span>
+        <span>Visitor Directory</span>
+      </a>
+
+      <a href="reports.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </span>
+        <span>Audit Reports</span>
+      </a>
+
+      <a href="add-visitor.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+        </span>
+        <span>Add / Pre-Book Visitor</span>
+      </a>
+
+      <!-- ADMINISTRATION -->
+      <div class="sidebar-section-title">ADMINISTRATION</div>
+      
+      <a href="users.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </span>
+        <span>User Accounts</span>
+      </a>
+
+      <a href="hosts.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </span>
+        <span>Host Officers (Hosts)</span>
+      </a>
+
+      <a href="add-user.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+          </svg>
+        </span>
+        <span>Add System User</span>
+      </a>
+
+      <!-- SUPPORT -->
+      <div class="sidebar-section-title">SUPPORT</div>
+
+      <a href="help.html" class="nav-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </span>
+        <span>Help & Manual</span>
+      </a>
+
+      <a href="javascript:void(0)" onclick="App.logout()" class="nav-link logout-link">
+        <span class="nav-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Bottom Profile (Matching Screenshot) -->
+    <div class="sidebar-footer">
+      <div class="user-card-mini">
+        <div class="user-avatar-circle admin-avatar" style="background: #0284c7; width: 44px; height: 44px; font-weight: 800; font-size: 0.95rem; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">SA</div>
+        <div class="user-meta-mini">
+          <div class="admin-name" style="color: #ffffff; font-weight: 700; font-size: 0.92rem; line-height: 1.2;">System Administrator</div>
+          <div class="admin-sub" style="color: #38bdf8; font-size: 0.78rem; font-weight: 500; margin-top: 2px;">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="app-main">
+
+    <!-- Topbar -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" type="button"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="topbar-title-wrap">
+          <h1>Update Visitor Record & Access Pass</h1>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Record Re-verification &bull; Host Officer Modification &bull; Audit Trail</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #10b981; background: #ecfdf5; padding: 6px 12px; border-radius: 20px; border: 1px solid #a7f3d0;">
+          <span class="pulse-dot" style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+          <span style="font-weight: 600;">System Online</span>
+        </div>
+        <div class="topbar-clock">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          <span id="topbar-live-clock">--:--</span>
+        </div>
+        <a href="visitors.html" class="btn btn-sm btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span>Back to Directory</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="app-body">
+
+      <!-- Executive Overview Banner -->
+      <div class="admin-page-hero">
+        <div class="admin-hero-watermark">
+          <svg width="240" height="240" fill="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        </div>
+        <div class="admin-hero-content">
+          <div>
+            <div class="admin-hero-tag">
+              <span>RECORD GOVERNANCE &bull; ACCESS PASS RE-ISSUE</span>
+            </div>
+            <h2 class="admin-hero-title">Modify Visitor Credentials & Access Privileges</h2>
+            <p class="admin-hero-desc">
+              Correct identification details, adjust the appointed host officer, or re-designate visiting department clearance.
+            </p>
+          </div>
+          <div class="admin-hero-actions">
+            <a href="visitors.html" class="btn btn-sm btn-secondary" style="border-color: #475569; color: #cbd5e1;">
+              Back to Visitors Directory
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative 2-Column Layout -->
+      <div class="admin-creative-grid">
+        
+        <!-- Left: Edit Form Card -->
+        <div class="card" style="border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);">
+          <div style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <h2 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Update Visitor Details</h2>
+              <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Changes synchronize immediately with the visitor pass preview.</p>
+            </div>
+            <span class="badge badge-navy" style="font-size: 0.75rem;">Editing Record</span>
+          </div>
+
+          <form id="edit-visitor-form" autocomplete="off">
+            <input type="hidden" id="edit-visitor-id">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="edit-visitor-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="edit-visitor-name" class="form-control" required autofocus>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="edit-visitor-nic">NIC / Identification <span class="required">*</span></label>
+                <input type="text" id="edit-visitor-nic" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="edit-visitor-phone">Phone Number</label>
+                <input type="tel" id="edit-visitor-phone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="edit-visitor-email">Email Address</label>
+                <input type="email" id="edit-visitor-email" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <label class="form-label" for="edit-visitor-host" style="margin: 0;">Who Are They Visiting? (Host Officer) <span class="required">*</span></label>
+                  <button type="button" onclick="openInlineAddHostModal()" class="btn btn-sm btn-secondary" style="padding: 2px 10px; font-size: 0.74rem; color: #0284c7; background: #eff6ff; border: 1px solid #bfdbfe; cursor: pointer; border-radius: 4px;">
+                    + Add New Host
+                  </button>
+                </div>
+                <select id="edit-visitor-host" class="form-select" required>
+                  <option value="">Select Host Officer...</option>
+                </select>
+                <div class="form-text" style="font-size: 0.78rem; color: #0284c7; margin-top: 4px;">
+                  Selecting host automatically syncs their department & office room.
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="edit-visitor-department">Visiting Department <span class="required">*</span></label>
+                <select id="edit-visitor-department" class="form-select" required>
+                  <option value="">Select Department...</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="edit-visitor-purpose">Purpose of Visit</label>
+              <textarea id="edit-visitor-purpose" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f5f9;">
+              <a href="visitors.html" class="btn btn-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary" style="box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
+                Save & Update Pass
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Real-Time Live Digital Access Pass Preview -->
+        <div class="live-badge-container">
+          <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+              <span class="pulse-dot" style="width: 8px; height: 8px; background: #0284c7; border-radius: 50%; display: inline-block;"></span>
+              <span>Updated Pass Preview</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #64748b;">Live Synchronization</span>
+          </div>
+
+          <div class="live-badge-card">
+            <div class="badge-lanyard-hanger">
+              <div class="badge-lanyard-slot"></div>
+            </div>
+
+            <div class="badge-header-band">
+              <div>
+                <div class="badge-header-org">VMS Enterprise Systems</div>
+                <div class="badge-header-type">Verified Visitor Pass</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">
+                ACTIVE
+              </div>
+            </div>
+
+            <div class="badge-body-content">
+              <div class="badge-identity-wrap">
+                <div class="badge-photo-box" id="edit-preview-avatar">
+                  <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  <span>PHOTO</span>
+                </div>
+                <div class="badge-name-box">
+                  <h3 id="edit-preview-name">Loading...</h3>
+                  <div class="badge-nic-tag" id="edit-preview-nic">NIC: --</div>
+                </div>
+              </div>
+
+              <div class="badge-details-grid">
+                <div class="badge-detail-item">
+                  <div class="lbl">Meeting Host</div>
+                  <div class="val" id="edit-preview-host" style="color:#0284c7;">--</div>
+                </div>
+                <div class="badge-detail-item">
+                  <div class="lbl">Department</div>
+                  <div class="val" id="edit-preview-dept">--</div>
+                </div>
+                <div class="badge-detail-item">
+                  <div class="lbl">Contact Phone</div>
+                  <div class="val" id="edit-preview-phone">--</div>
+                </div>
+                <div class="badge-detail-item">
+                  <div class="lbl">Pass Status</div>
+                  <div class="val" style="color: #059669;">Verified Record</div>
+                </div>
+              </div>
+
+              <div style="background:#f8fafc; padding: 10px 14px; border-radius: 8px; border:1px solid #e2e8f0; margin-bottom: 18px; font-size: 0.82rem;">
+                <span style="font-weight: 700; color: #475569; display: block; margin-bottom: 2px;">Visit Objective:</span>
+                <span id="edit-preview-purpose" style="color: #64748b; font-style: italic;">--</span>
+              </div>
+
+              <div class="badge-qr-section">
+                <div class="badge-qr-visual">
+                  <div class="badge-qr-matrix">
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot" style="background:transparent;"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                    <div class="badge-qr-dot"></div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.72rem; font-weight: 700; color: #1e293b;">ENCRYPTED QR</div>
+                    <div style="font-size: 0.68rem; color: #64748b;">VMS-VERIFIED-HASH</div>
+                  </div>
+                </div>
+
+                <div class="badge-security-seal">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>SECURITY SEAL</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="js/app.js"></script>
+<script src="js/visitors.js"></script>
+
+<script>
+// Interactive Live Pass Preview Synchronization for Edit Page
+document.addEventListener('DOMContentLoaded', () => {
+  const nameInp = document.getElementById('edit-visitor-name');
+  const nicInp = document.getElementById('edit-visitor-nic');
+  const phoneInp = document.getElementById('edit-visitor-phone');
+  const hostSel = document.getElementById('edit-visitor-host');
+  const deptSel = document.getElementById('edit-visitor-department');
+  const purposeInp = document.getElementById('edit-visitor-purpose');
+
+  const pName = document.getElementById('edit-preview-name');
+  const pNic = document.getElementById('edit-preview-nic');
+  const pPhone = document.getElementById('edit-preview-phone');
+  const pHost = document.getElementById('edit-preview-host');
+  const pDept = document.getElementById('edit-preview-dept');
+  const pPurpose = document.getElementById('edit-preview-purpose');
+  const pAvatar = document.getElementById('edit-preview-avatar');
+
+  function syncEditPreview() {
+    const name = nameInp?.value.trim() || 'Visitor';
+    const nic = nicInp?.value.trim() || '--';
+    const phone = phoneInp?.value.trim() || '--';
+    const hostText = hostSel?.selectedIndex > 0 ? hostSel.options[hostSel.selectedIndex].text : '--';
+    const deptText = deptSel?.selectedIndex > 0 ? deptSel.options[deptSel.selectedIndex].text : '--';
+    const purpose = purposeInp?.value.trim() || 'No purpose specified.';
+
+    if (pName) pName.textContent = name;
+    if (pNic) pNic.textContent = 'NIC: ' + nic;
+    if (pPhone) pPhone.textContent = phone;
+    if (pHost) pHost.textContent = hostText.split('(')[0].trim();
+    if (pDept) pDept.textContent = deptText;
+    if (pPurpose) pPurpose.textContent = purpose;
+
+    if (pAvatar && name.length > 0) {
+      const initials = name.split(' ').map(p => p[0]).join('').substring(0, 2).toUpperCase();
+      pAvatar.innerHTML = `<span style="font-size: 1.25rem; font-weight: 800; color: #0284c7;">${initials}</span>`;
+      pAvatar.style.background = '#e0f2fe';
+      pAvatar.style.borderColor = '#0284c7';
+    }
+  }
+
+  nameInp?.addEventListener('input', syncEditPreview);
+  nicInp?.addEventListener('input', syncEditPreview);
+  phoneInp?.addEventListener('input', syncEditPreview);
+  hostSel?.addEventListener('change', () => { setTimeout(syncEditPreview, 50); });
+  deptSel?.addEventListener('change', syncEditPreview);
+  purposeInp?.addEventListener('input', syncEditPreview);
+
+  // Initial sync after data is loaded
+  setTimeout(syncEditPreview, 600);
+});
+
+// Inline Add Host Modal logic
+async function openInlineAddHostModal() {
+  const modal = document.getElementById('inline-host-modal');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  
+  // Populate departments
+  const deptSelect = document.getElementById('inline-host-dept');
+  if (deptSelect && deptSelect.options.length <= 1) {
+    try {
+      const res = await App.request('departments/get_departments.php');
+      const depts = res.data?.departments || [];
+      deptSelect.innerHTML = '<option value="">Select Department...</option>' + 
+        depts.map(d => `<option value="${d.DepartmentID}">${App.escapeHtml(d.Name)}</option>`).join('');
+    } catch (e) {}
+  }
+}
+
+function closeInlineAddHostModal() {
+  const modal = document.getElementById('inline-host-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+async function submitInlineHost(e) {
+  e.preventDefault();
+  const name = document.getElementById('inline-host-name')?.value.trim();
+  const deptId = document.getElementById('inline-host-dept')?.value;
+  const designation = document.getElementById('inline-host-title')?.value.trim();
+  const room = document.getElementById('inline-host-room')?.value.trim();
+  const phone = document.getElementById('inline-host-phone')?.value.trim();
+  const email = document.getElementById('inline-host-email')?.value.trim();
+
+  if (!name || !deptId || !designation) {
+    App.showToast('error', 'Required Fields', 'Please fill in Name, Department, and Designation.');
+    return;
+  }
+
+  try {
+    const res = await App.request('hosts/add_host.php', {
+      method: 'POST',
+      body: {
+        name,
+        department_id: deptId,
+        designation,
+        office_room: room,
+        phone,
+        email,
+        status: 'Active'
+      }
+    });
+
+    App.showToast('success', 'Host Added', `Host Officer ${name} added successfully!`);
+    closeInlineAddHostModal();
+    document.getElementById('inline-host-form')?.reset();
+
+    // Reload host dropdown and auto-select this new host
+    const hRes = await App.request('hosts/get_hosts.php');
+    const hosts = hRes.data?.hosts || [];
+    const hSel = document.getElementById('edit-visitor-host');
+    if (hSel) {
+      hSel.innerHTML = '<option value="">Select Host Officer...</option>' + 
+        hosts.map(h => `<option value="${App.escapeHtml(h.Name)}" data-dept-id="${h.DepartmentID}">${App.escapeHtml(h.Name)} (${App.escapeHtml(h.DepartmentName)} - ${App.escapeHtml(h.Designation)})</option>`).join('');
+      hSel.value = name;
+      hSel.dispatchEvent(new Event('change'));
+    }
+  } catch(err) {
+    App.showToast('error', 'Error', err.message);
+  }
+}
+</script>
+
+<!-- Inline Add Host Modal -->
+<div class="modal" id="inline-host-modal" style="display:none; position: fixed; inset: 0; z-index: 1060; background: rgba(15,23,42,0.7); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px;">
+  <div class="modal-content" style="background: #ffffff; border-radius: 16px; max-width: 520px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); border: 1px solid #e2e8f0;">
+    <div style="padding: 18px 24px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Add Host Officer</h3>
+        <p style="font-size: 0.8rem; color: #64748b; margin: 0;">Add person to the organizational host roster</p>
+      </div>
+      <button type="button" onclick="closeInlineAddHostModal()" style="background:none; border:none; font-size: 1.5rem; color: #94a3b8; cursor: pointer;">&times;</button>
+    </div>
+    <form id="inline-host-form" onsubmit="submitInlineHost(event)">
+      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label" for="inline-host-name">Officer Full Name <span class="required">*</span></label>
+          <input type="text" id="inline-host-name" class="form-control" placeholder="e.g. Dr. Arthur Vance" required autofocus>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inline-host-dept">Department <span class="required">*</span></label>
+          <select id="inline-host-dept" class="form-select" required>
+            <option value="">Select Department...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inline-host-title">Designation / Role Title <span class="required">*</span></label>
+          <input type="text" id="inline-host-title" class="form-control" placeholder="e.g. Chief Technology Officer" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="inline-host-room">Office / Room</label>
+            <input type="text" id="inline-host-room" class="form-control" placeholder="e.g. Wing 4B">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inline-host-phone">Phone Extension</label>
+            <input type="text" id="inline-host-phone" class="form-control" placeholder="e.g. Ext 401">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inline-host-email">Email Address</label>
+          <input type="email" id="inline-host-email" class="form-control" placeholder="e.g. arthur@vms-enterprise.com">
+        </div>
+      </div>
+      <div style="padding: 16px 24px; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; gap: 10px; background: #f8fafc; border-radius: 0 0 16px 16px;">
+        <button type="button" onclick="closeInlineAddHostModal()" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save & Select Host</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

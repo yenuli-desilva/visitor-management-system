@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Visitor Management System (VMS) - Reports & Print Stylesheet
+   ========================================================================== */
+
+.report-controls-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.report-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.report-tabs {
+  display: flex;
+  background-color: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.report-tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 18px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.report-tab-btn.active {
+  background-color: #ffffff;
+  color: var(--text-main);
+  box-shadow: var(--shadow-xs);
+}
+
+.report-filter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.report-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.report-summary-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.report-summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.report-summary-val {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.print-report-header {
+  display: none;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #0f172a;
+}
+
+.print-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.print-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ----------------------------------------------------
+   Print Stylesheet (@media print)
+   ---------------------------------------------------- */
+@media print {
+  /* Hide UI chrome */
+  .app-sidebar,
+  .app-topbar,
+  .sidebar-overlay,
+  .report-controls-card,
+  .btn,
+  #toast-container,
+  .modal-overlay,
+  .table-actions {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt !important;
+  }
+
+  .app-main {
+    margin-left: 0 !important;
+  }
+
+  .app-body {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .print-report-header {
+    display: block !important;
+  }
+
+  .report-summary-cards {
+    display: flex !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .report-summary-box {
+    border: 1px solid #94a3b8 !important;
+    padding: 10px 14px !important;
+    flex: 1 !important;
+  }
+
+  .table-card {
+    border: 1px solid #334155 !important;
+    box-shadow: none !important;
+  }
+
+  .data-table th, .data-table td {
+    padding: 8px 10px !important;
+    font-size: 9pt !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    color: #000000 !important;
+  }
+
+  .data-table th {
+    background-color: #f1f5f9 !important;
+  }
+
+  .badge {
+    border: 1px solid #000000 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+}

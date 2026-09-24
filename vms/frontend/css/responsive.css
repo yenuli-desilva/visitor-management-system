@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Visitor Management System (VMS) - Responsive Design System
+   Breakpoints: 1440px, 1024px, 768px, 480px, 390px, 360px
+   ========================================================================== */
+
+/* ----------------------------------------------------
+   Large Desktops & Laptops (<= 1200px)
+   ---------------------------------------------------- */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------------
+   Tablets & Small Desktops (<= 992px)
+   ---------------------------------------------------- */
+@media (max-width: 992px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .app-topbar {
+    padding: 0 20px;
+  }
+
+  .app-body {
+    padding: 20px 16px 36px;
+  }
+
+  /* Split Screen Auth Stacking */
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-brand-side {
+    flex: none;
+    padding: 36px 24px;
+  }
+
+  .brand-hero-content {
+    margin: 20px 0;
+  }
+
+  .brand-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .auth-form-side {
+    padding: 36px 20px;
+  }
+}
+
+/* ----------------------------------------------------
+   Mobile Landscape & Large Phones (<= 768px)
+   ---------------------------------------------------- */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-clock {
+    display: none;
+  }
+
+  .report-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .report-tabs {
+    width: 100%;
+  }
+
+  .report-tab-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .report-filter-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .report-filter-wrap .form-control {
+    width: 100% !important;
+  }
+
+  .report-filter-wrap .btn {
+    width: 100%;
+  }
+
+  #toast-container {
+    right: 12px;
+    left: 12px;
+    max-width: none;
+    top: 16px;
+  }
+
+  .modal-dialog {
+    max-width: 95%;
+    margin: 10px auto;
+  }
+}
+
+/* ----------------------------------------------------
+   Standard Mobile Phones (<= 480px, 390px, 360px)
+   ---------------------------------------------------- */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .app-topbar {
+    padding: 0 14px;
+    height: 60px;
+  }
+
+  .topbar-title-wrap h1 {
+    font-size: 1.15rem;
+  }
+
+  .app-body {
+    padding: 14px 12px 28px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+  }
+
+  .data-table th, .data-table td {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .table-actions {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .table-actions .btn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .modal-header, .modal-body, .modal-footer {
+    padding: 14px 16px;
+  }
+
+  /* Touch-friendly buttons */
+  .btn {
+    min-height: 40px;
+  }
+}
+
+/* ----------------------------------------------------
+   Landing Page Responsive Adaptations
+   ---------------------------------------------------- */
+@media (max-width: 992px) {
+  .landing-nav-links {
+    display: none;
+  }
+
+  .landing-menu-toggle {
+    display: block;
+  }
+
+  .landing-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .portals-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .landing-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .floating-stat-badge.badge-top {
+    top: -10px;
+    right: 0px;
+  }
+
+  .floating-stat-badge.badge-bottom {
+    bottom: -10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-hero-title {
+    font-size: 2.3rem;
+  }
+
+  .landing-hero-desc {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-floating-pill {
+    position: static;
+    margin-top: 14px;
+  }
+
+  .landing-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .floating-stat-badge {
+    position: static;
+    margin-top: 12px;
+  }
+
+  .demo-banner-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .landing-nav-actions .btn-login {
+    display: none;
+  }
+
+  .landing-hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-primary, .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .portal-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portal-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ----------------------------------------------------
+   Admin Creative Elements Mobile Responsiveness
+   ---------------------------------------------------- */
+@media (max-width: 992px) {
+  .admin-creative-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .live-badge-container,
+  .live-operator-badge {
+    position: static;
+  }
+
+  .admin-page-hero {
+    padding: 20px 18px;
+  }
+
+  .admin-hero-title {
+    font-size: 1.25rem;
+  }
+
+  .admin-hero-actions {
+    width: 100%;
+  }
+
+  .admin-hero-actions .btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
+/* ----------------------------------------------------
+   Print Stylesheet
+   ---------------------------------------------------- */
+@media print {
+  .app-sidebar,
+  .app-topbar,
+  .sidebar-overlay,
+  .btn,
+  #toast-container,
+  .modal-overlay,
+  .table-actions,
+  .report-controls-card {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .app-main {
+    margin-left: 0 !important;
+  }
+
+  .app-body {
+    padding: 0 !important;
+  }
+
+  .table-card {
+    border: 1px solid #333333 !important;
+    box-shadow: none !important;
+  }
+
+  .data-table th, .data-table td {
+    border-bottom: 1px solid #cccccc !important;
+    color: #000000 !important;
+  }
+}

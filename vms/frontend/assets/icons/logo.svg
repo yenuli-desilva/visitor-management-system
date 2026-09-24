@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="vmsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#vmsGrad)"/>
+  <path d="M18 24L22 28L30 20M37.236 15.968A23.91 23.91 0 0024 12a23.91 23.91 0 00-13.236 3.968C10.278 18.064 10 20.978 10 24c0 7.42 5.099 13.655 12 15.496A16.035 16.035 0 0024 40c.683 0 1.353-.069 2-.202C32.901 37.957 38 31.722 38 24c0-3.022-.278-5.936-.764-8.032z" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
